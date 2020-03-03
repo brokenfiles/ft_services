@@ -1,0 +1,5 @@
+-- start minikube
+minikube start
+
+-- setup ingress (https://kubernetes.io/fr/docs/concepts/services-networking/ingress/)
+minikube addons enable ingress (enable nginx ingress)
