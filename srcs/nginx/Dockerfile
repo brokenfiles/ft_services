@@ -1,5 +1,4 @@
 FROM nginx:alpine
-MAINTAINER Charles Chudant (cchudant@student.42.fr)
 
 RUN apk add --update openssh
 
