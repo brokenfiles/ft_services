@@ -1,0 +1,16 @@
+secretGenerator:
+  - name: mysql-pass
+    literals:
+      - password=pass
+  - name: ftps-user
+    literals:
+      - username=user
+      - password=pass
+resources:
+  - nginx.yaml
+  - ingress.yaml
+  - ftps-deployment.yaml
+  - mysql.yaml
+  - phpmyadmin.yaml
+  - wordpress.yaml
+  - kubernetes-dashboard.yaml
