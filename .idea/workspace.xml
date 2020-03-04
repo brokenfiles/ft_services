@@ -9,14 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44491e64-6ad8-4667-89d9-bbca5211fb6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/srcs/nginx.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="44491e64-6ad8-4667-89d9-bbca5211fb6b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +67,7 @@
       <workItem from="1583233272858" duration="2326000" />
       <workItem from="1583251335051" duration="489000" />
       <workItem from="1583252193686" duration="2132000" />
-      <workItem from="1583262796497" duration="361000" />
+      <workItem from="1583262796497" duration="593000" />
     </task>
     <servers />
   </component>
