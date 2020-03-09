@@ -12,10 +12,28 @@ then
 	mkdir -p /run/mysqld
 fi
 
-echo "FLUSH PRIVILEGES;" > send
-echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;" >> send
+tfile=`mktemp`
+if [ ! -f "$tfile" ]
+then
+	echo Cannot create temp file!
+	exit 1
+fi
 
-/usr/bin/mysqld --user=root --bootstrap --verbose=0 < send
-rm -f send
+echo Root password is $MYSQL_ROOT_PASSWORD
 
+cat << EOF > $tfile
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY "$MYSQL_ROOT_PASSWORD" WITH GRANT OPTION;
+EOF
+
+echo Bootstraping...
+if ! /usr/bin/mysqld --user=root --bootstrap --verbose=0 < $tfile
+then
+	echo Cannot bootstrap mysql!
+	exit 1
+fi
+rm -f $tfile
+echo Bootstraping done!
+
+echo Launching mysql server!
 exec /usr/bin/mysqld --user=root --console

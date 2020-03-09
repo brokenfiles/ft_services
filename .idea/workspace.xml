@@ -7,7 +7,12 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="" />
+    <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/mysql/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql/entrypoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/nginx/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +70,7 @@
       <workItem from="1583324006951" duration="4858000" />
       <workItem from="1583333023698" duration="4957000" />
       <workItem from="1583404732761" duration="5341000" />
-      <workItem from="1583749335318" duration="11122000" />
+      <workItem from="1583749335318" duration="13026000" />
     </task>
     <servers />
   </component>
