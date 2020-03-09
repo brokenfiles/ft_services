@@ -50,7 +50,7 @@ spec:
     spec:
       restartPolicy: Always
       containers:
-      - image: custom-wordpress:1.9
+      - image: my-wordpress:1.9
         imagePullPolicy: Never
         name: wordpress
         env:
@@ -59,10 +59,7 @@ spec:
         - name: WORDPRESS_DB_USER
           value: root
         - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: pass
         - name: WORDPRESS_DB_NAME
           value: wordpress
         ports:

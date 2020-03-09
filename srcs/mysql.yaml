@@ -51,14 +51,11 @@ spec:
       restartPolicy: Always
       containers:
       - name: mysql
-        image: custom-mysql:1.11
+        image: my-mysql:1.11
         imagePullPolicy: Never
         env:
         - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
+          value: pass
         ports:
         - containerPort: 3306
           name: mysql

@@ -37,7 +37,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: phpmyadmin
-          image: custom-phpmyadmin:1.1
+          image: my-phpmyadmin:1.1
           imagePullPolicy: Never
           env:
             - name: PMA_HOST

@@ -5,7 +5,6 @@ RUN apk add --update mysql mysql-client && \
 
 COPY my.cnf /etc/mysql/my.cnf
 COPY entrypoint /entrypoint
-COPY wordpress.tar.gz /var/www/html/wordpress.tar.gz
 
 RUN mkdir /app
 

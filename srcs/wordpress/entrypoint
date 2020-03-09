@@ -1,7 +1,5 @@
 #!/bin/sh
 
-tar -xvf /var/www/html/wordpress.tar.gz > /dev/null
-
 echo $WORDPRESS_DB_HOST
 echo $WORDPRESS_DB_USER
 echo $WORDPRESS_DB_PASSWORD

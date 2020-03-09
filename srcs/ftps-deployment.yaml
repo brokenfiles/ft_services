@@ -55,7 +55,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: ftps
-          image: custom-ftps:1.6
+          image: my-ftps:1.6
           imagePullPolicy: Never
           ports:
             - containerPort: 21
@@ -64,12 +64,6 @@ spec:
               hostPort: 15477
           env:
             - name: FTP_USER
-              valueFrom:
-                secretKeyRef:
-                  name: ftps-user
-                  key: username
+              value: user
             - name: FTP_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: ftps-user
-                  key: username
+              value: pass

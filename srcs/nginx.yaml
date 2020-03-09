@@ -41,7 +41,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: nginx
-        image: custom-nginx:1.11
+        image: my-nginx:1.11
         imagePullPolicy: Never
         ports:
         - containerPort: 443
