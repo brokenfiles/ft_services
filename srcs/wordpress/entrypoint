@@ -1,8 +1,4 @@
 #!/bin/sh
-
-echo $WORDPRESS_DB_HOST
-echo $WORDPRESS_DB_USER
-echo $WORDPRESS_DB_PASSWORD
 MYSQL="mysql -h $WORDPRESS_DB_HOST -u $WORDPRESS_DB_USER --password=$WORDPRESS_DB_PASSWORD"
 
 conn_error()
