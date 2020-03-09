@@ -1,3 +1,4 @@
+
 resources:
   - nginx.yaml
   - ingress.yaml
