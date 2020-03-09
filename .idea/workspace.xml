@@ -8,19 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/ftps-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ftps-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/kustomization.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/mysql.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/mysql/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/nginx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/nginx.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/phpmyadmin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/phpmyadmin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/entrypoint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/mysql/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql/entrypoint" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +30,18 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.YAML" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/srcs" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="echo yo" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -73,7 +68,7 @@
       <workItem from="1583324006951" duration="4858000" />
       <workItem from="1583333023698" duration="4957000" />
       <workItem from="1583404732761" duration="5341000" />
-      <workItem from="1583749335318" duration="3969000" />
+      <workItem from="1583749335318" duration="6036000" />
     </task>
     <servers />
   </component>
