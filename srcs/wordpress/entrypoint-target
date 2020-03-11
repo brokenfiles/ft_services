@@ -1,12 +1,11 @@
-
+#!/bin/sh
 
 apk add openrc lighttpd \
 php7 php7-openssl php7-cgi php7-xml php7-pdo php7-mcrypt php7-session php7-mysqli php7-zlib php7-json \
  --no-cache
 
-wget http://wordpress.org/latest.tar.gz
-tar -xf latest.tar.gz --strip-components=1 -C /var/www/localhost/htdocs
-rm -f latest.tar.gz
+tar -xf /var/www/localhost/htdocs/wordpress.tar.gz --strip-components=1 -C /var/www/localhost/htdocs
+rm -f /var/www/localhost/htdocs/wordpress.tar.gz
 
 mkdir -p /var/www/localhost/htdocs/tmp
 chmod 777 -R /var/www/
@@ -21,3 +20,10 @@ sed -i 's/\/usr\/bin\/php-cgi/\/usr\/bin\/php-cgi7/g' /etc/lighttpd/mod_fastcgi.
 
 openrc
 touch /run/openrc/softlevel
+
+MYSQL="mysql -h mysql -u root --password=pass"
+$MYSQL -e 'CREATE DATABASE wordpress;'
+$MYSQL wordpress < /wordpress.sql
+
+# run
+/usr/sbin/nginx && /usr/local/sbin/php-fpm

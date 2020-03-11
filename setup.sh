@@ -24,12 +24,12 @@ docker build -t my-wordpress:1.9 srcs/wordpress
 
 #adding .yaml
 kubectl apply -f srcs/ingress.yaml
-kubectl apply -f srcs/wordpress.yaml
 kubectl apply -f srcs/nginx.yaml
 kubectl apply -f srcs/ftps-deployment.yaml
 kubectl apply -f srcs/mysql.yaml
 kubectl apply -f srcs/phpmyadmin.yaml
 kubectl apply -f srcs/kubernetes-dashboard.yaml
+kubectl apply -f srcs/wordpress.yaml
 
 printf "📦 minikube ip : %s\n" "$IP_ADDRESS"
 while true; do

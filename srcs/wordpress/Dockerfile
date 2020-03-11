@@ -3,9 +3,9 @@ FROM wordpress:php7.4-fpm-alpine
 RUN apk update && \
 	apk add nginx mysql-client
 
-COPY entrypoint /tmp/init.sh
-COPY wordpress_dump-target.sql /wordpress-dump.sql
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY entrypoint-target /tmp/entrypoint-target
+COPY wordpress.tar.gz /var/www/localhost/htdocs
+COPY wordpress.sql /wordpress.sql
 
-RUN sh /tmp/init.sh
-
-ENTRYPOINT lighttpd -D -f /etc/lighttpd/lighttpd.conf
+ENTRYPOINT sh /tmp/entrypoint-target
