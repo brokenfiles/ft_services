@@ -1,9 +1,8 @@
-
 resources:
-  - nginx.yaml
   - ingress.yaml
+  - nginx.yaml
   - ftps-deployment.yaml
   - mysql.yaml
   - phpmyadmin.yaml
-  - wordpress.yaml
   - kubernetes-dashboard.yaml
+  - wordpress.yaml

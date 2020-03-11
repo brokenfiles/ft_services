@@ -4,6 +4,8 @@ apk add openrc lighttpd \
 php7 php7-openssl php7-cgi php7-xml php7-pdo php7-mcrypt php7-session php7-mysqli php7-zlib php7-json \
  --no-cache
 
+MINIKUBE_IP=$(cat /tmp/minikube_ip.txt)
+
 #wget http://wordpress.org/latest.tar.gz
 #tar -xf latest.tar.gz --strip-components=1 -C /var/www/localhost/htdocs
 
@@ -24,8 +26,17 @@ sed -i 's/\/usr\/bin\/php-cgi/\/usr\/bin\/php-cgi7/g' /etc/lighttpd/mod_fastcgi.
 openrc
 touch /run/openrc/softlevel
 
+cat << EOF > inst.txt
+USE wordpress;
+UPDATE wp_options SET option_value = 'http://$MINIKUBE_IP:5050' WHERE option_id = 1;
+UPDATE wp_options SET option_value = 'http://$MINIKUBE_IP:5050' WHERE option_id = 2;
+EOF
+
 MYSQL="mysql -h mysql -u root --password=pass"
 $MYSQL -e 'CREATE DATABASE wordpress;'
 $MYSQL wordpress < /wordpress.sql
+$MYSQL < inst.txt
+
+rm -f inst.txt
 
 /usr/sbin/nginx && /usr/local/sbin/php-fpm

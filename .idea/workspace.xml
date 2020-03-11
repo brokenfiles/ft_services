@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/srcs/wordpress/wordpress.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/kustomization.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/wordpress/wordpress.sql" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/wordpress.sql" afterDir="false" />
     </list>

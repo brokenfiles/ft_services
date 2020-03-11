@@ -14,6 +14,7 @@ then
 fi
 
 IP_ADDRESS=$(minikube ip)
+echo "$IP_ADDRESS" > srcs/wordpress/mnk_ip
 
 eval $(minikube docker-env)
 docker build -t my-nginx:1.11 srcs/nginx
@@ -31,6 +32,8 @@ kubectl apply -f srcs/phpmyadmin.yaml
 kubectl apply -f srcs/kubernetes-dashboard.yaml
 kubectl apply -f srcs/wordpress.yaml
 
+rm -f srcs/wordpress/mnk_ip
+
 printf "📦 minikube ip : %s\n" "$IP_ADDRESS"
 while true; do
     read -p "Copy [$IP_ADDRESS] to your clipboard ? (y/n) " yn
@@ -39,5 +42,4 @@ while true; do
         * ) exit;;
     esac
 done
-
 
