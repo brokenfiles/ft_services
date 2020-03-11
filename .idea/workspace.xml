@@ -9,6 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/wordpress/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/entrypoint" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +69,8 @@
       <workItem from="1583324006951" duration="4858000" />
       <workItem from="1583333023698" duration="4957000" />
       <workItem from="1583404732761" duration="5341000" />
-      <workItem from="1583749335318" duration="14034000" />
+      <workItem from="1583749335318" duration="14991000" />
+      <workItem from="1583917432091" duration="5326000" />
     </task>
     <servers />
   </component>
