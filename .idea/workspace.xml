@@ -8,10 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/srcs/wordpress/wordpress.tar.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress/wordpress.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/wordpress/wordpress.sql" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/wordpress.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +32,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/srcs/wordpress/test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.YAML" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/srcs/wordpress/test" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/srcs/wordpress" />
       <recent name="$PROJECT_DIR$/srcs" />
