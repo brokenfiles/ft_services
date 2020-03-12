@@ -4,6 +4,6 @@ RUN apk update && \
 	apk add nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY entrypoint /entrypoint
+COPY entrypoint-target /tmp/entrypoint-target
 
-ENTRYPOINT sh /entrypoint
+ENTRYPOINT sh /tmp/entrypoint-target

@@ -32,7 +32,14 @@ UPDATE wp_options SET option_value = 'http://$MINIKUBE_IP:5050' WHERE option_id 
 UPDATE wp_options SET option_value = 'http://$MINIKUBE_IP:5050' WHERE option_id = 2;
 EOF
 
+log_err()
+{
+	printf "Erreur de connexion à la base de données.\n"
+	exit 1
+}
+
 MYSQL="mysql -h mysql -u root --password=pass"
+$MYSQL -e '' || log_err
 $MYSQL -e 'CREATE DATABASE wordpress;'
 $MYSQL wordpress < /wordpress.sql
 $MYSQL < inst.txt
