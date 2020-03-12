@@ -8,18 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/srcs/ssh-keys/ssh_host_ed25519_key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/srcs/ssh-keys/ssh_host_ed25519_key.pub" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/srcs/ssh-keys/ssh_host_rsa_key" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/srcs/ssh-keys/ssh_host_rsa_key.pub" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/srcs/grafana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/srcs/grafana/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/srcs/grafana/grafana.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/mysql/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/mysql/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/mysql/entrypoint-target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/nginx/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/nginx/entrypoint-target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/phpmyadmin/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/phpmyadmin/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/phpmyadmin/entrypoint" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/phpmyadmin/entrypoint-target" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/wordpress/entrypoint-target" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +24,20 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,13 +54,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.YAML" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/srcs/wordpress" />
-      <recent name="$PROJECT_DIR$/srcs" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/srcs" />
       <recent name="$PROJECT_DIR$/srcs/wordpress/test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/srcs/wordpress" />
+      <recent name="$PROJECT_DIR$/srcs" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -87,6 +96,8 @@
       <workItem from="1583749335318" duration="14991000" />
       <workItem from="1583917432091" duration="7873000" />
       <workItem from="1583939407341" duration="4320000" />
+      <workItem from="1584018024797" duration="2168000" />
+      <workItem from="1584027315733" duration="747000" />
     </task>
     <servers />
   </component>

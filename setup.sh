@@ -22,6 +22,7 @@ docker build -t my-mysql:1.11  srcs/mysql
 docker build -t my-ftps:1.6 srcs/ftps
 docker build -t my-phpmyadmin:1.1 srcs/phpmyadmin
 docker build -t my-wordpress:1.9 srcs/wordpress
+docker build -t my-grafana:1.1 srcs/grafana
 
 #adding .yaml
 kubectl apply -f srcs/ingress.yaml
@@ -31,6 +32,7 @@ kubectl apply -f srcs/mysql.yaml
 kubectl apply -f srcs/phpmyadmin.yaml
 kubectl apply -f srcs/kubernetes-dashboard.yaml
 kubectl apply -f srcs/wordpress.yaml
+kubectl apply -f srcs/grafana.yaml
 
 rm -f srcs/wordpress/mnk_ip
 
