@@ -110,6 +110,10 @@ print_message $SUCCESS "Minikube IP ADDRESS : $IP_ADDRESS"
 
 minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
 
+#replace ip
+sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/yaml/telegraf.yaml > srcs/yaml/telegraf_ip.yaml
+echo "UPDATE data_source SET url = 'http://$IP_ADDRESS:8086'" | sqlite3 srcs/containers/grafana/grafana.db
+
 print_message $INFORMATION "Trying to build docker images..."
 # on build toutes les images via docker
 eval "$(minikube docker-env)"
@@ -132,7 +136,7 @@ kubectl apply -f srcs/yaml/wordpress.yaml
 kubectl apply -f srcs/yaml/influxdb.yaml
 kubectl apply -f srcs/yaml/grafana.yaml
 kubectl apply -f srcs/yaml/ftps.yaml
-kubectl apply -f srcs/yaml/telegraf.yaml
+kubectl apply -f srcs/yaml/telegraf_ip.yaml
 print_message $SUCCESS "YAML files added to minikube."
 
 print_message $SUCCESS "Everything went well."
