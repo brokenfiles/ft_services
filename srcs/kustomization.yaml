@@ -1,8 +1,0 @@
-resources:
-  - ingress.yaml
-  - nginx.yaml
-  - ftps-deployment.yaml
-  - mysql.yaml
-  - phpmyadmin.yaml
-  - kubernetes-dashboard.yaml
-  - wordpress.yaml
