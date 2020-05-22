@@ -18,8 +18,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: telegraf-deployment
-  labels:
-    app: telegraf-app
 spec:
   replicas: 1
   selector:
@@ -38,7 +36,7 @@ spec:
           imagePullPolicy: Never
           env:
             - name: DTB_URL
-              value: "http://REPLACE_IP:8086"
+              value: "http://192.168.99.100:8086"
           volumeMounts:
             - name: dockersock
               mountPath: "/var/run/docker.sock"

@@ -8,7 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/srcs/manifest/influxdb.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/srcs/manifest/ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/ftps.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/ftps.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/grafana.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/grafana.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/influxdb.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/mysql.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/mysql.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/nginx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/nginx.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/phpmyadmin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/phpmyadmin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/telegraf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/telegraf.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/telegraf_ip.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/telegraf_ip.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/yaml/wordpress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifest/wordpress.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +115,8 @@
       <workItem from="1587558495824" duration="719000" />
       <workItem from="1587559314576" duration="1473000" />
       <workItem from="1588593940241" duration="2800000" />
-      <workItem from="1589740506131" duration="1118000" />
+      <workItem from="1589740506131" duration="2926000" />
+      <workItem from="1590076327844" duration="8352000" />
     </task>
     <servers />
   </component>

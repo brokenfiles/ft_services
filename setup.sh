@@ -28,6 +28,15 @@ clean_pods() {
   print_message $SUCCESS "Pods cleaned."
 }
 
+clean_volumes() {
+  print_message $INFORMATION "Cleaning volumes..."
+  # delete all pvc
+  kubectl delete --all pvc --namespace=default
+  # delete all pv
+  kubectl delete --all pv --namespace=default
+  print_message $SUCCESS "Volumes cleaned."
+}
+
 minikube_reset_vbox_dhcp_leases() {
   # # Reset Virtualbox DHCP Lease Info
   print_message $INFORMATION "Resetting Virtualbox DHCP Lease Info..."
@@ -36,6 +45,7 @@ minikube_reset_vbox_dhcp_leases() {
   if [[ -f ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases ]] ; then
     rm  ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases
   fi
+  exit 0
 }
 
 help() {
@@ -53,6 +63,9 @@ do
   case "${!i}" in
     "-clean")
       clean_pods
+    ;;
+    "--clean-volumes")
+      clean_volumes
     ;;
     "-restart")
       clean_pods
@@ -96,7 +109,6 @@ then
     print_message $SUCCESS "Minikube started successfully."
     print_message $INFORMATION "Adding addons to minikube..."
     # on ajoute les addons nécessaires au projet
-    minikube addons enable metrics-server
     minikube addons enable ingress
     print_message $SUCCESS "Addons addedd successfully."
 fi
@@ -111,7 +123,7 @@ print_message $SUCCESS "Minikube IP ADDRESS : $IP_ADDRESS"
 minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
 
 #replace ip
-sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/yaml/telegraf.yaml > srcs/yaml/telegraf_ip.yaml
+sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/manifest/telegraf.yaml > srcs/manifest/telegraf_ip.yaml
 echo "UPDATE data_source SET url = 'http://$IP_ADDRESS:8086'" | sqlite3 srcs/containers/grafana/grafana.db
 
 print_message $INFORMATION "Trying to build docker images..."
@@ -129,14 +141,15 @@ print_message $SUCCESS "Docker images are built."
 
 # adding YAML files to link docker images to kubectl and minikube
 print_message $INFORMATION "Tring to add .yaml to minikube"
-kubectl apply -f srcs/yaml/nginx.yaml
-kubectl apply -f srcs/yaml/mysql.yaml
-kubectl apply -f srcs/yaml/phpmyadmin.yaml
-kubectl apply -f srcs/yaml/wordpress.yaml
-kubectl apply -f srcs/yaml/influxdb.yaml
-kubectl apply -f srcs/yaml/grafana.yaml
-kubectl apply -f srcs/yaml/ftps.yaml
-kubectl apply -f srcs/yaml/telegraf_ip.yaml
+kubectl apply -f srcs/manifest/nginx.yaml
+kubectl apply -f srcs/manifest/ingress.yaml # ajout de l'ingress
+kubectl apply -f srcs/manifest/mysql.yaml
+kubectl apply -f srcs/manifest/phpmyadmin.yaml
+kubectl apply -f srcs/manifest/wordpress.yaml
+kubectl apply -f srcs/manifest/influxdb.yaml
+kubectl apply -f srcs/manifest/grafana.yaml
+kubectl apply -f srcs/manifest/ftps.yaml
+kubectl apply -f srcs/manifest/telegraf_ip.yaml
 print_message $SUCCESS "YAML files added to minikube."
 
 print_message $SUCCESS "Everything went well."
