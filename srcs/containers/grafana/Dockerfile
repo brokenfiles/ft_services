@@ -1,7 +1,5 @@
 FROM alpine:latest
 
-RUN apk update
-
 RUN apk update && \
 	apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main libc6-compat && \
 	wget https://dl.grafana.com/oss/release/grafana-6.7.3.linux-amd64.tar.gz && \

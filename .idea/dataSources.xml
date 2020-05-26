@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/srcs/grafana/grafana.db</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="grafana [2]" uuid="cc31cf77-b1e6-4934-9cf3-22e35d1e1905">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/srcs/containers/grafana/grafana.db</jdbc-url>
+    </data-source>
   </component>
 </project>

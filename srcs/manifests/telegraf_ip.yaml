@@ -30,13 +30,13 @@ spec:
     spec:
       containers:
         - name: telegraf
-          image: my-services/telegraf
+          image: llaurent/telegraf
           ports:
             - containerPort: 4999
           imagePullPolicy: Never
           env:
             - name: DTB_URL
-              value: "http://192.168.99.100:8086"
+              value: "http://192.168.99.110:8086"
           volumeMounts:
             - name: dockersock
               mountPath: "/var/run/docker.sock"

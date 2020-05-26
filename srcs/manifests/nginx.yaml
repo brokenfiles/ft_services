@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: my-services/nginx
+          image: llaurent/nginx
           imagePullPolicy: Never
           env:
             - name: SSH_USER

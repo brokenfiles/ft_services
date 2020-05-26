@@ -20,6 +20,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ftps-deployment
+  labels:
+    app: ftps-app
 spec:
   selector:
     matchLabels:
@@ -33,7 +35,7 @@ spec:
     spec:
       containers:
         - name: ftps
-          image: my-services/ftps
+          image: llaurent/ftps
           env:
             - name: FTPS_USER
               value: user

@@ -8,6 +8,10 @@ SUCCESS="\033[1;32m"
 ERROR="\033[1;31m"
 RESET="\033[0;0m"
 
+# Passwords:
+# SSH : admin:admin
+# ftps : user:pass
+
 #
 # Fonction qui prend deux paramètres, la couleur et le préfixe,
 # puis le message
@@ -15,6 +19,18 @@ RESET="\033[0;0m"
 print_message() {
   NOW=$(date +%H:%M:%S)
   printf "$1%s ➜ $2$RESET\n" $NOW
+}
+
+redo_service()
+{
+  print_message $INFORMATION "Restarting $1..."
+  kubectl delete deploy $1-deployment
+  kubectl delete service $1-service
+  eval "$(minikube docker-env)"
+  docker rmi -f llaurent/$1
+  docker build -t llaurent/$1 srcs/containers/$1/.
+  kubectl apply -f srcs/manifests/$1.yaml
+  print_message $SUCCESS "Restarted $1"
 }
 
 clean_pods() {
@@ -77,6 +93,10 @@ do
     "-stop")
       exit 0
     ;;
+    "-nginx")
+      redo_service nginx
+      exit 0
+    ;;
     *)
       help
     ;;
@@ -93,13 +113,13 @@ echo "\033[01;33m
                                                                                                                                     
 \033[0;0m"
 
-print_message $INFORMATION "Trying to start Minikube..."
 
 #
 # On lance minikube seulement si il n'est pas lancé
 #
 if ! minikube status >/dev/null 2>&1
 then
+    print_message $INFORMATION "Trying to start Minikube..."
     # driver : virtualbox
     if ! minikube start --vm-driver=virtualbox
     then
@@ -110,6 +130,7 @@ then
     print_message $INFORMATION "Adding addons to minikube..."
     # on ajoute les addons nécessaires au projet
     minikube addons enable ingress
+    minikube addons enable metrics-server
     print_message $SUCCESS "Addons addedd successfully."
 fi
 
@@ -123,33 +144,33 @@ print_message $SUCCESS "Minikube IP ADDRESS : $IP_ADDRESS"
 minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
 
 #replace ip
-sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/manifest/telegraf.yaml > srcs/manifest/telegraf_ip.yaml
+sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/manifests/telegraf.yaml > srcs/manifests/telegraf_ip.yaml
 echo "UPDATE data_source SET url = 'http://$IP_ADDRESS:8086'" | sqlite3 srcs/containers/grafana/grafana.db
 
 print_message $INFORMATION "Trying to build docker images..."
 # on build toutes les images via docker
 eval "$(minikube docker-env)"
-docker build -t my-services/nginx srcs/containers/nginx
-docker build -t my-services/mysql srcs/containers/mysql
-docker build -t my-services/phpmyadmin srcs/containers/phpmyadmin
-docker build -t my-services/wordpress srcs/containers/wordpress
-docker build -t my-services/influxdb srcs/containers/influxdb
-docker build -t my-services/grafana srcs/containers/grafana
-docker build -t my-services/ftps srcs/containers/ftps
-docker build -t my-services/telegraf srcs/containers/telegraf
+docker build -t llaurent/nginx srcs/containers/nginx
+docker build -t llaurent/mysql srcs/containers/mysql
+docker build -t llaurent/phpmyadmin srcs/containers/phpmyadmin
+docker build -t llaurent/wordpress srcs/containers/wordpress
+docker build -t llaurent/influxdb srcs/containers/influxdb
+docker build -t llaurent/grafana srcs/containers/grafana
+docker build -t llaurent/ftps srcs/containers/ftps
+docker build -t llaurent/telegraf srcs/containers/telegraf
 print_message $SUCCESS "Docker images are built."
 
 # adding YAML files to link docker images to kubectl and minikube
 print_message $INFORMATION "Tring to add .yaml to minikube"
-kubectl apply -f srcs/manifest/nginx.yaml
-kubectl apply -f srcs/manifest/ingress.yaml # ajout de l'ingress
-kubectl apply -f srcs/manifest/mysql.yaml
-kubectl apply -f srcs/manifest/phpmyadmin.yaml
-kubectl apply -f srcs/manifest/wordpress.yaml
-kubectl apply -f srcs/manifest/influxdb.yaml
-kubectl apply -f srcs/manifest/grafana.yaml
-kubectl apply -f srcs/manifest/ftps.yaml
-kubectl apply -f srcs/manifest/telegraf_ip.yaml
+kubectl apply -f srcs/manifests/nginx.yaml
+kubectl apply -f srcs/manifests/ingress.yaml # ajout de l'ingress
+kubectl apply -f srcs/manifests/mysql.yaml
+kubectl apply -f srcs/manifests/phpmyadmin.yaml
+kubectl apply -f srcs/manifests/wordpress.yaml
+kubectl apply -f srcs/manifests/influxdb.yaml
+kubectl apply -f srcs/manifests/grafana.yaml
+kubectl apply -f srcs/manifests/ftps.yaml
+kubectl apply -f srcs/manifests/telegraf_ip.yaml
 print_message $SUCCESS "YAML files added to minikube."
 
 print_message $SUCCESS "Everything went well."

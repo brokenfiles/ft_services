@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ft_services by llaurent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Barlow', sans-serif;
+            text-transform: uppercase;
+            overflow: hidden;
+        }
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .links {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .links p {
+            display: inline-block;
+            padding: 5px;
+            color: #FFCB7A;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .links p:hover {
+            padding: 5px;
+            color: #ff8e6a;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="links">
+        <p class="link" port="5000">Phpmyadmin</p>
+        <p class="link" port="3000">Grafana</p>
+    </div>
+    <h1>ft_services, par llaurent</h1>
+    <div class="links">
+        <p class="link" port="5050">Wordpress</p>
+        <p class="link">Nginx</p>
+    </div>
+    <script>
+        let elements = document.querySelectorAll(".link");
+        elements.forEach(function(element) {
+            element.addEventListener("click", function(event) {
+                event.preventDefault();
+                let port = this.getAttribute('port');
+                if (port !== null) {
+                    location.href = location.href.substr(0, location.href.length - 1) + ':' + port;
+                }
+            });
+        });
+        document.addEventListener("mousemove", function (event) {
+            let clientY = event.clientY;
+            let percentY = clientY / document.documentElement.clientHeight * 100;
+            let colorY = 50 * percentY / 100;
+            let clientX = event.clientX;
+            let percentX = clientX / document.documentElement.clientWidth * 100;
+            let colorX = 50 * percentX / 100;
+            let colorXY = ( colorX + colorY ) / 2;
+            document.querySelector("body").style.backgroundColor = "rgb(" + colorXY + ", " + colorXY+ ", " + colorXY + ")";
+        });
+    </script>
+</div>
+</body>
+</html>
