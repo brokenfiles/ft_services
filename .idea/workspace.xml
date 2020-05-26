@@ -8,33 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/srcs/containers/nginx/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Todo" beforeDir="false" afterPath="$PROJECT_DIR$/Todo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/ftps/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/ftps/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/grafana/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/grafana/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/grafana/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/grafana/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/influxdb/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/influxdb/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/import_wordpress.sh" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/import_wordpress.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/startup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/startup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/containers/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/nginx/nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/ftps.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/ftps.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/grafana.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/grafana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/influxdb.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/influxdb.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/mysql.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/mysql.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/nginx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/nginx.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/phpmyadmin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/phpmyadmin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/telegraf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/telegraf.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/telegraf_ip.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/telegraf_ip.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifest/wordpress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/wordpress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/manifests/nginx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/nginx.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +107,7 @@
       <workItem from="1590222320703" duration="2006000" />
       <workItem from="1590393175723" duration="533000" />
       <workItem from="1590394825051" duration="2000" />
-      <workItem from="1590406222991" duration="7762000" />
+      <workItem from="1590406222991" duration="10482000" />
     </task>
     <servers />
   </component>
