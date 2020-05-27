@@ -7,11 +7,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifests/nginx.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/nginx.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +103,7 @@
       <workItem from="1590222320703" duration="2006000" />
       <workItem from="1590393175723" duration="533000" />
       <workItem from="1590394825051" duration="2000" />
-      <workItem from="1590406222991" duration="10482000" />
+      <workItem from="1590406222991" duration="10508000" />
     </task>
     <servers />
   </component>
