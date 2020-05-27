@@ -121,7 +121,7 @@ if ! minikube status >/dev/null 2>&1
 then
     print_message $INFORMATION "Trying to start Minikube..."
     # driver : virtualbox
-    if ! minikube start --vm-driver=virtualbox
+    if ! minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000
     then
         print_message $ERROR "Minikube cannot start !"
         exit 1
@@ -141,7 +141,7 @@ echo "$IP_ADDRESS" > srcs/containers/mysql/mnk_ip
 echo "$IP_ADDRESS" > srcs/containers/ftps/mnk_ip
 print_message $SUCCESS "Minikube IP ADDRESS : $IP_ADDRESS"
 
-minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
+#minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
 
 #replace ip
 sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/manifests/telegraf.yaml > srcs/manifests/telegraf_ip.yaml

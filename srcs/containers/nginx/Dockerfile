@@ -26,4 +26,4 @@ RUN chmod 600 /etc/ssh/ssh_host_rsa_key
 
 ENTRYPOINT sh /tmp/startup.sh
 
-EXPOSE 443 80 22
+EXPOSE 443 80 30001

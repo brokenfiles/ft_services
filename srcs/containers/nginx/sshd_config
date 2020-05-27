@@ -1,4 +1,4 @@
-Port 22
+Port 30001
 PermitRootLogin yes
 PasswordAuthentication yes
 Subsystem sftp /usr/lib/openssh/sftp-server

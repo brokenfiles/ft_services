@@ -12,6 +12,7 @@ COPY startup.sh /tmp/startup.sh
 COPY config.inc.php /www/config.inc.php
 
 RUN chmod 777 /tmp/startup.sh
+RUN chmod 650 /www/config.inc.php
 
 ENTRYPOINT sh /tmp/startup.sh
 
