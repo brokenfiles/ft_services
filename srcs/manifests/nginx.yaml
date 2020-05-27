@@ -25,8 +25,8 @@ spec:
     - port: 443
       protocol: TCP
       name: https
-    - port: 22
-      nodePort: 22
+    - port: 30001
+      nodePort: 30001
       protocol: TCP
       name: ssh
   selector:
