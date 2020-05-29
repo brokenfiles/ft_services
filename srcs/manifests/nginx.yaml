@@ -48,20 +48,13 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: llaurent/nginx
+          image: nginx-container
           imagePullPolicy: Never
           env:
             - name: SSH_USER
               value: admin
             - name: SSH_PASSWORD
               value: admin
-#          ports:
-#            - containerPort: 22
-#              name: ssh
-#            - containerPort: 80
-#              name: http
-#            - containerPort: 443
-#              name: https
           readinessProbe:
             httpGet:
               path: /

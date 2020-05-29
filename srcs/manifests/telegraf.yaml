@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: telegraf
-          image: llaurent/telegraf
+          image: telegraf-container
           ports:
             - containerPort: 4999
           imagePullPolicy: Never

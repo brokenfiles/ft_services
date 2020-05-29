@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: grafana
-          image: llaurent/grafana
+          image: grafana-container
           ports:
             - containerPort: 3000
           imagePullPolicy: Never

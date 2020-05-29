@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: llaurent/wordpress
+          image: wordpress-container
           ports:
             - containerPort: 5050
           imagePullPolicy: Never

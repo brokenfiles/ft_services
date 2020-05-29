@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: influxdb
-          image: llaurent/influxdb
+          image: influx-container
           ports:
             - containerPort: 8086
           imagePullPolicy: Never

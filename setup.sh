@@ -11,6 +11,9 @@ RESET="\033[0;0m"
 # Passwords:
 # SSH : admin:admin
 # ftps : user:pass
+# wordpress : admin:pass
+# grafana : admin:password
+# phpmyadmin : wp_admin:pass
 
 #
 # Fonction qui prend deux paramètres, la couleur et le préfixe,
@@ -27,10 +30,11 @@ redo_service()
   kubectl delete deploy $1-deployment
   kubectl delete service $1-service
   eval "$(minikube docker-env)"
-  docker rmi -f llaurent/$1
-  docker build -t llaurent/$1 srcs/containers/$1/.
+  docker rmi -f $1-container
+  docker build -t $1-container srcs/containers/$1/.
   kubectl apply -f srcs/manifests/$1.yaml
   print_message $SUCCESS "Restarted $1"
+  print_message $SUCCESS "Ip address : $(minikube ip)"
 }
 
 clean_pods() {
@@ -97,6 +101,10 @@ do
       redo_service nginx
       exit 0
     ;;
+    "-ftps")
+      redo_service ftps
+      exit 0
+    ;;
     *)
       help
     ;;
@@ -120,8 +128,8 @@ echo "\033[01;33m
 if ! minikube status >/dev/null 2>&1
 then
     print_message $INFORMATION "Trying to start Minikube..."
-    # driver : virtualbox
-    if ! minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000
+#    if ! minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000 # for linux
+    if ! minikube start --vm-driver=virtualbox --extra-config=apiserver.service-node-port-range=1-35000 # for macos
     then
         print_message $ERROR "Minikube cannot start !"
         exit 1
@@ -141,23 +149,21 @@ echo "$IP_ADDRESS" > srcs/containers/mysql/mnk_ip
 echo "$IP_ADDRESS" > srcs/containers/ftps/mnk_ip
 print_message $SUCCESS "Minikube IP ADDRESS : $IP_ADDRESS"
 
-#minikube ssh "sudo -u root awk 'NR==14{print \"    - --service-node-port-range=1-35000\"}7' /etc/kubernetes/manifests/kube-apiserver.yaml >> tmp && sudo -u root rm /etc/kubernetes/manifests/kube-apiserver.yaml && sudo -u root mv tmp /etc/kubernetes/manifests/kube-apiserver.yaml"
-
 #replace ip
 sed 's/REPLACE_IP/'"$IP_ADDRESS"'/g' srcs/manifests/telegraf.yaml > srcs/manifests/telegraf_ip.yaml
 echo "UPDATE data_source SET url = 'http://$IP_ADDRESS:8086'" | sqlite3 srcs/containers/grafana/grafana.db
 
 print_message $INFORMATION "Trying to build docker images..."
-# on build toutes les images via docker
+# on build toutes les images via docker dans l'environnement minikube
 eval "$(minikube docker-env)"
-docker build -t llaurent/nginx srcs/containers/nginx
-docker build -t llaurent/mysql srcs/containers/mysql
-docker build -t llaurent/phpmyadmin srcs/containers/phpmyadmin
-docker build -t llaurent/wordpress srcs/containers/wordpress
-docker build -t llaurent/influxdb srcs/containers/influxdb
-docker build -t llaurent/grafana srcs/containers/grafana
-docker build -t llaurent/ftps srcs/containers/ftps
-docker build -t llaurent/telegraf srcs/containers/telegraf
+docker build -t nginx-container srcs/containers/nginx
+docker build -t mysql-container srcs/containers/mysql
+docker build -t phpmyadmin-container srcs/containers/phpmyadmin
+docker build -t wordpress-container srcs/containers/wordpress
+docker build -t influx-container srcs/containers/influxdb
+docker build -t grafana-container srcs/containers/grafana
+docker build -t ftps-container srcs/containers/ftps
+docker build -t telegraf-container srcs/containers/telegraf
 print_message $SUCCESS "Docker images are built."
 
 # adding YAML files to link docker images to kubectl and minikube
@@ -184,10 +190,12 @@ done;
 
 printf "\n"
 
-while true; do
-    read -p "Copy [$IP_ADDRESS] to your clipboard ? (y/n) " yn
-    case $yn in
-        [Yy]* ) echo "$IP_ADDRESS" | pbcopy; printf "%s copied to your clipboard.\n" "$IP_ADDRESS"; break;;
-        * ) exit;;
-    esac
-done
+print_message $SUCCESS "Ip address : $IP_ADDRESS"
+
+#while true; do
+#    read -p "Copy [$IP_ADDRESS] to your clipboard ? (y/n) " yn
+#    case $yn in
+#        [Yy]* ) echo "$IP_ADDRESS" | pbcopy; printf "%s copied to your clipboard.\n" "$IP_ADDRESS"; break;;
+#        * ) exit;;
+#    esac
+#done

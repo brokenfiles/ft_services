@@ -5,16 +5,14 @@ metadata:
   labels:
     app: ftps-app
 spec:
-  ports:
-    - port: 21
-      protocol: TCP
-      name: ftps
-    - port: 21000
-      protocol: TCP
-      name: ftps-data
+  type: NodePort
   selector:
     app: ftps-app
-  type: LoadBalancer
+  ports:
+    - port: 21
+      name: ftps
+    - port: 21000
+      name: ftps-data
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -26,8 +24,6 @@ spec:
   selector:
     matchLabels:
       app: ftps-app
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -35,7 +31,7 @@ spec:
     spec:
       containers:
         - name: ftps
-          image: llaurent/ftps
+          image: ftps-container
           env:
             - name: FTPS_USER
               value: user
