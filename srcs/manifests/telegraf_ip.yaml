@@ -36,7 +36,7 @@ spec:
           imagePullPolicy: Never
           env:
             - name: DTB_URL
-              value: "http://192.168.99.115:8086"
+              value: "http://192.168.99.116:8086"
           volumeMounts:
             - name: dockersock
               mountPath: "/var/run/docker.sock"

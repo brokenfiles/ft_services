@@ -62,3 +62,9 @@ spec:
             initialDelaySeconds: 5
             periodSeconds: 5
             successThreshold: 1
+          livenessProbe:
+            tcpSocket:
+              port: 30001
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1

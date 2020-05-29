@@ -23,6 +23,7 @@ COPY startup.sh /tmp/startup.sh
 COPY index.html /html/index.html
 
 RUN chmod 600 /etc/ssh/ssh_host_rsa_key
+RUN chmod 777 /html/index.html
 
 ENTRYPOINT sh /tmp/startup.sh
 

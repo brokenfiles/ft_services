@@ -66,6 +66,12 @@ spec:
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
+          livenessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 15
+            periodSeconds: 5
+            successThreshold: 1
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:

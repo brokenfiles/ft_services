@@ -43,3 +43,9 @@ spec:
             - containerPort: 21000
               hostPort: 21000
           imagePullPolicy: Never
+          livenessProbe:
+            tcpSocket:
+              port: 21
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            successThreshold: 1

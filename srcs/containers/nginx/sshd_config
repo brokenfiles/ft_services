@@ -1,4 +1,4 @@
 Port 30001
-PermitRootLogin yes
+PermitRootLogin no
 PasswordAuthentication yes
 Subsystem sftp /usr/lib/openssh/sftp-server

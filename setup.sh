@@ -105,6 +105,30 @@ do
       redo_service ftps
       exit 0
     ;;
+    "-grafana")
+      redo_service grafana
+      exit 0
+    ;;
+    "-influxdb")
+      redo_service influxdb
+      exit 0
+    ;;
+    "-mysql")
+      redo_service mysql
+      exit 0
+    ;;
+    "-phpmyadmin")
+      redo_service phpmyadmin
+      exit 0
+    ;;
+    "-telegraf")
+      redo_service telegraf
+      exit 0
+    ;;
+    "-wordpress")
+      redo_service wordpress
+      exit 0
+    ;;
     *)
       help
     ;;
