@@ -3,6 +3,7 @@
 #
 # CONFIGURATION
 #
+MINIKUBE_LOCATION="docker"
 INFORMATION="\033[01;33m"
 SUCCESS="\033[1;32m"
 ERROR="\033[1;31m"
@@ -152,8 +153,7 @@ echo "\033[01;33m
 if ! minikube status >/dev/null 2>&1
 then
     print_message $INFORMATION "Trying to start Minikube..."
-#    if ! minikube start --vm-driver=docker --extra-config=apiserver.service-node-port-range=1-35000 # for linux
-    if ! minikube start --vm-driver=virtualbox --extra-config=apiserver.service-node-port-range=1-35000 # for macos
+    if ! minikube start --vm-driver=$MINIKUBE_LOCATION --extra-config=apiserver.service-node-port-range=1-35000 # for linux
     then
         print_message $ERROR "Minikube cannot start !"
         exit 1
