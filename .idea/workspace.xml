@@ -9,13 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="05a494e9-0f00-4a2a-9a4b-d7ea3f2ef354" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Todo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/ftps/mnk_ip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/grafana/grafana.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/containers/mysql/mnk_ip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifests/telegraf.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/telegraf.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/manifests/telegraf_ip.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/manifests/ingress.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +115,8 @@
       <workItem from="1590596679911" duration="937000" />
       <workItem from="1590691092065" duration="1630000" />
       <workItem from="1590738822441" duration="8039000" />
-      <workItem from="1590766959033" duration="2035000" />
+      <workItem from="1590766959033" duration="2343000" />
+      <workItem from="1590777515052" duration="4214000" />
     </task>
     <servers />
   </component>
