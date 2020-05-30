@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx-container
+          image: nginx
           imagePullPolicy: Never
           env:
             - name: SSH_USER

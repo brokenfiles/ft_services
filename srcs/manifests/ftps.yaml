@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: ftps
-          image: ftps-container
+          image: ftps
           env:
             - name: FTPS_USER
               value: user

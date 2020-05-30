@@ -31,8 +31,8 @@ redo_service()
   kubectl delete deploy $1-deployment
   kubectl delete service $1-service
   eval "$(minikube docker-env)"
-  docker rmi -f $1-container
-  docker build -t $1-container srcs/containers/$1/.
+  docker rmi -f $1
+  docker build -t $1 srcs/containers/$1/.
   kubectl apply -f srcs/manifests/$1.yaml
   print_message $SUCCESS "Restarted $1"
   print_message $SUCCESS "Ip address : $(minikube ip)"
@@ -180,14 +180,14 @@ echo "UPDATE data_source SET url = 'http://$IP_ADDRESS:8086'" | sqlite3 srcs/con
 print_message $INFORMATION "Trying to build docker images..."
 # on build toutes les images via docker dans l'environnement minikube
 eval "$(minikube docker-env)"
-docker build -t nginx-container srcs/containers/nginx
-docker build -t mysql-container srcs/containers/mysql
-docker build -t phpmyadmin-container srcs/containers/phpmyadmin
-docker build -t wordpress-container srcs/containers/wordpress
-docker build -t influx-container srcs/containers/influxdb
-docker build -t grafana-container srcs/containers/grafana
-docker build -t ftps-container srcs/containers/ftps
-docker build -t telegraf-container srcs/containers/telegraf
+docker build -t nginx srcs/containers/nginx
+docker build -t mysql srcs/containers/mysql
+docker build -t phpmyadmin srcs/containers/phpmyadmin
+docker build -t wordpress srcs/containers/wordpress
+docker build -t influx srcs/containers/influxdb
+docker build -t grafana srcs/containers/grafana
+docker build -t ftps srcs/containers/ftps
+docker build -t telegraf srcs/containers/telegraf
 print_message $SUCCESS "Docker images are built."
 
 # adding YAML files to link docker images to kubectl and minikube
